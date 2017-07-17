@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>流動產生器</title>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style type="text/css">
+        .replaceable {
+            font-size: 24px;
+        }
+        /* Space out content a bit */
+        body {
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+
+        /* Everything but the jumbotron gets side spacing for mobile first views */
+        .header,
+        .marketing,
+        .footer {
+          padding-right: 15px;
+          padding-left: 15px;
+        }
+
+        /* Custom page header */
+        .header {
+          padding-bottom: 20px;
+          border-bottom: 1px solid #e5e5e5;
+        }
+        /* Make the masthead heading the same height as the navigation */
+        .header h3 {
+          margin-top: 0;
+          margin-bottom: 0;
+          line-height: 40px;
+        }
+
+        /* Custom page footer */
+        .footer {
+          padding-top: 19px;
+          color: #777;
+          border-top: 1px solid #e5e5e5;
+        }
+
+        /* Customize container */
+        @media (min-width: 768px) {
+          .container {
+            max-width: 730px;
+          }
+        }
+        .container-narrow > hr {
+          margin: 30px 0;
+        }
+
+        /* Main marketing message and sign up button */
+        .jumbotron {
+          text-align: center;
+          border-bottom: 1px solid #e5e5e5;
+        }
+        .jumbotron .btn {
+          padding: 14px 24px;
+          font-size: 21px;
+        }
+
+        /* Supporting marketing content */
+        .marketing {
+          margin: 40px 0;
+        }
+        .marketing p + h4 {
+          margin-top: 28px;
+        }
+
+        /* Responsive: Portrait tablets and up */
+        @media screen and (min-width: 768px) {
+          /* Remove the padding we set earlier */
+          .header,
+          .marketing,
+          .footer {
+            padding-right: 0;
+            padding-left: 0;
+          }
+          /* Space out the masthead */
+          .header {
+            margin-bottom: 30px;
+          }
+          /* Remove the bottom border on the jumbotron for visual effect */
+          .jumbotron {
+            border-bottom: 0;
+          }
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+      <h1>流動產生器</h1>
+      <p>流動 隨心所欲</p>
+    </div>
+    <div class="row marketing">
+    <div class="col-lg-6">
+    剛<span class="replaceable replaceable-1">直播</span>的時候有人問我，如果一味的付出，值得嗎？<br/>
+    我的回答是，我們先不問值不值得。<br/>
+    對我而言<span class="replaceable replaceable-2">情感</span>是流動的，是液態而非固態，就好比水在瓶子裡面，而我們在彼端，我流向他的同時，他也正流向我，我們之間沒有所謂的你我。<br/>
+    <br/>
+    為何我不認為是固態呢?因為<span class="replaceable replaceable replaceable-2">情感</span>是無法被量化的，我們無法以具體的方式去計算那些<span class="replaceable replaceable-2">情感</span>本身的質量，所謂的固態是可以被量化的，就好比今天我給你的愛是5顆石頭，然後你再給我10顆，<br/>
+    好似我們之間才有所謂的平等。<br/>
+    不過<span class="replaceable replaceable-2">情感</span>裡面的天秤是沒有磅秤去衡量的，唯一的標準在於你心裡所感知一切。<br/>
+    既然無法計算，何來的值與不值，最重要的是，你如何去看待這一段關係，而你們的關係是否是流動的。<br/>
+    </div>
+    <div class="col-lg-6">
+    <h4>替換字詞</h4>
+    <div class="input-group">
+        <input type="text" id="text-replace1" class="form-control" placeholder="直播" aria-describedby="basic-addon1">
+        <input type="text" id="text-replace2" class="form-control" placeholder="情感" aria-describedby="basic-addon1">
+    </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(document).ready( () => {
+    $("#text-replace1")
+    .focus( () => {
+        $(".replaceable-1").animate({fontSize: 40});
+    }).focusout( () => {
+        $(".replaceable-1").animate({fontSize: 24});
+    }).keyup( () => {
+        var val = $("#text-replace1").val();
+        if(val)
+            $(".replaceable-1").text($("#text-replace1").val());
+        else
+            $(".replaceable-1").text($("#text-replace1").attr("placeholder"));
+    });
+    $("#text-replace2")
+    .focus( () => {
+        $(".replaceable-2").animate({fontSize: 40});
+    }).focusout( () => {
+        $(".replaceable-2").animate({fontSize: 24});
+    }).keyup( () => {
+        var val = $("#text-replace2").val();
+        if(val)
+            $(".replaceable-2").text($("#text-replace2").val());
+        else
+            $(".replaceable-2").text($("#text-replace2").attr("placeholder"));
+    });
+});
+</script>
+</body>
+</html>
